@@ -1,12 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
-const port = app.get('/', (req, res) => {
-  res.json('Welcome to Mini Api')
+app.use(cors(process.env.FRONTEND_URL))
+
+app.get('/', (req, res) => {
+  res.json(process.env.FRONTEND_URL)
 })
-
-console.log(process.env)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on ${process.env.PORT}`)
