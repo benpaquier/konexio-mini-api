@@ -6,7 +6,10 @@ const cors = require('cors')
 app.use(cors(process.env.FRONTEND_URL))
 
 app.get('/', (req, res) => {
-  res.json(process.env.FRONTEND_URL)
+  res.json({
+    name: 'Spiderman',
+    age: 99
+  })
 })
 
 app.listen(process.env.PORT, () => {
