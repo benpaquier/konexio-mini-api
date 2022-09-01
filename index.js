@@ -1,11 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = 5000
 
-app.get('/', (req, res) => {
+const port = app.get('/', (req, res) => {
   res.json('Welcome to Mini Api')
 })
 
-app.listen(port, () => {
-  console.log(`Server running on ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on ${process.env.PORT}`)
 })
